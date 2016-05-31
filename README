@@ -1,3 +1,3 @@
-# google.test
+# google.benchmark
 
-mkn wrapper for gtest/gmock
+mkn wrapper for google benchmark
