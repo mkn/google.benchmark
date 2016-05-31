@@ -1,0 +1,39 @@
+
+
+name: google.benchmark
+version: stable
+
+parent: lib
+
+profile:
+  - name: cmn
+    inc: google/include
+    arg: -DHAVE_STD_REGEX
+
+  - name: lib
+    parent: cmn
+    src: |
+        google/src, 0
+    if_lib:
+        win: Shlwapi
+
+  - name: diagnostics_test
+    self: lib
+    main: google/test/diagnostics_test.cc
+
+  - name: donotoptimize_test
+    self: lib
+    main: google/test/donotoptimize_test.cc
+
+  - name: filter_test
+    self: lib
+    main: google/test/filter_test.cc
+
+  - name: reporter_output_test
+    self: lib
+    parent: cmn
+    main: google/test/reporter_output_test.cc
+
+  - name: skip_with_error_test
+    self: lib
+    main: google/test/skip_with_error_test.cc
