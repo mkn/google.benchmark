@@ -1,7 +1,6 @@
 
 
 name: google.benchmark
-version: stable
 
 parent: lib
 
