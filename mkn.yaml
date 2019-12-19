@@ -7,40 +7,38 @@ parent: std
 
 profile:
   - name: inc
-    inc: google/include
-    
+    inc: g/include
+
   - name: lib
     parent: inc
-    src: |
-        google/src, 0
+    src: g/src
     if_lib:
         win: Shlwapi
 
   - name: std
     parent: lib
     arg: -DHAVE_STD_REGEX
-    
+
   - name: posix
     parent: lib
     arg: -DHAVE_POSIX_REGEX
-    
+
   - name: diagnostics_test
     self: std
-    main: google/test/diagnostics_test.cc
+    main: g/test/diagnostics_test.cc
 
   - name: donotoptimize_test
     self: std
-    main: google/test/donotoptimize_test.cc
+    main: g/test/donotoptimize_test.cc
 
   - name: filter_test
     self: std
-    main: google/test/filter_test.cc
+    main: g/test/filter_test.cc
 
   - name: reporter_output_test
     self: std
-    parent: cmn
-    main: google/test/reporter_output_test.cc
+    main: g/test/reporter_output_test.cc
 
   - name: skip_with_error_test
     self: std
-    main: google/test/skip_with_error_test.cc
+    main: g/test/skip_with_error_test.cc
