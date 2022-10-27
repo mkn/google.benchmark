@@ -10,7 +10,7 @@ IF EXIST %CD%\google (
 	rd /S/Q %CD%\google
 )
 
-git clone https://github.com/google/benchmark -b master g --recursive || exit 666 /b
+git clone https://github.com/google/benchmark -b main g --recursive || exit 666 /b
 
 mkdir %CD%\google
 mkdir %CD%\google\src
